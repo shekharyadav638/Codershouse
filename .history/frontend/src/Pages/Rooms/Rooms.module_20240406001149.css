@@ -1,0 +1,13 @@
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.Heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.searchBox{
+    
+}

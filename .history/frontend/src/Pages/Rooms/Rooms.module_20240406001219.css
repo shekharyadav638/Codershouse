@@ -1,0 +1,18 @@
+.left{
+    display: flex;
+    align-items: center;
+}
+
+.Heading{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.searchBox{
+    background: #262626;
+}
+
+.searchBar{
+    background: none;
+    border: none;
+}

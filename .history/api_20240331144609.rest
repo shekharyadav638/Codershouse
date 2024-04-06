@@ -1,0 +1,24 @@
+POST http://localhost:5500/api/send-otp HTTP/1.1
+Content-Type: application/json
+
+{
+    "phone": "+917536067974"
+}
+
+###
+POST http://localhost:5500/api/verify-otp HTTP/1.1
+Content-Type: application/json
+
+{
+    "phone": "+917536067974",
+    "otp" :"1691",
+    "hash": "fba2dc926c6fc6f6b590718d9156e5f7f41d682e6f17200562307ad386c7bdc0.1710433237312"
+}
+
+POST http://localhost:5500/api/activate HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Shekhar",
+    "avatar": ""
+}
