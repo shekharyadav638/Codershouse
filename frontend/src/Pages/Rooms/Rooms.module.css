@@ -1,3 +1,9 @@
+.roomsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
 .left{
     display: flex;
     align-items: center;
@@ -36,4 +42,31 @@
     width: 60%;
     height: 4px;
     background: #0077ff;
+}
+
+.createRoom{
+    display: flex;
+    align-items: center;
+    background: #20bd5f;
+    padding: 5px 20px;
+    border-radius: 20px ;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.createRoom span{
+    font-weight: bold;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+.createRoom:hover{
+    background: #3b8255;
+}
+
+.roomsList{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 20px;
 }
