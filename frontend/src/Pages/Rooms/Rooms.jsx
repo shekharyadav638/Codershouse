@@ -2,47 +2,25 @@ import React from "react";
 import styles from "./Rooms.module.css";
 import RoomCard from "../../Components/RoomCard/RoomCard";
 import AddRoomModel from "../../Components/AddRoomModel/AddRoomModel";
-import { useState } from "react";
-
-const rooms = [
-  {
-    id: 1,
-    topic: "Which framework best for frontend ?",
-    speakers: [
-      {
-        id: 1,
-        name: "John Doe",
-        avatar: "/images/monkey-avatar.png",
-      },
-      {
-        id: 2,
-        name: "Jane Doe",
-        avatar: "/images/monkey-avatar.png",
-      },
-    ],
-    totalPeople: 40,
-  },
-  {
-    id: 4,
-    topic: "Why people use stack overflow?",
-    speakers: [
-      {
-        id: 1,
-        name: "John Doe",
-        avatar: "/images/monkey-avatar.png",
-      },
-      {
-        id: 2,
-        name: "Jane Doe",
-        avatar: "/images/monkey-avatar.png",
-      },
-    ],
-    totalPeople: 40,
-  },
-];
+import { useState, useEffect } from "react";
+import { getAllRooms } from "../../http";
 
 const Rooms = () => {
   const [showModel, setShowModel] = useState(false);
+  const [rooms, setRooms] = useState([]);
+
+  useEffect(() => {
+    const fetchRooms = async () => {
+      try {
+        const { data } = await getAllRooms();
+        setRooms(data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchRooms();
+  }, []);
+
   const openModal = () => {
     setShowModel(true);
   };
