@@ -12,7 +12,6 @@ class AuthController {
     }
 
     const otp = await otpService.generateOtp();
-
     const ttl = 1000 * 60 * 2; // 2 min
     const expires = Date.now() + ttl;
     const data = `${phone}.${otp}.${expires}`;
@@ -20,7 +19,7 @@ class AuthController {
 
     // send OTP
     try {
-      // await otpService.sendBySms(phone, otp);
+      //await otpService.sendBySms(phone, otp);
       res.json({
         hash: `${hash}.${expires}`,
         phone,
